@@ -1,0 +1,72 @@
+<link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}" />
+<header class="header">
+    <a href="/" class="logo">AGT</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <li><a href="/about">О нас</a></li>
+        <li><a href="/info">Программа курса</a></li>
+        <li><a href="/buy">Стоимость</a></li>
+        <li><a href="/#teachers">Преподаватели</a></li>
+    </ul>
+</header>
+
+<header data-role="Accordion" class="homepage-header">
+    <div class="homepage-container01">
+        <a href="/" class="homepage-navlink">
+          <img
+            src="{{ url_for('static', filename='public/playground_assets/logo.png') }}"
+            alt="image"
+            class="homepage-image"
+          />
+        </a>
+    </div>
+    <div class="homepage-separator"></div>
+    <nav class="homepage-nav">
+        <nav class="navigation-links61-nav">
+            <a href="/about" class="navigation-links61-navlink">
+                <span>О нас</span>
+            </a>
+            <a href="/info" class="navigation-links61-navlink1">
+                <span>Программа курса</span>
+            </a>
+            <a href="/buy" class="navigation-links61-link">
+                <span>Стоимость</span>
+            </a>
+            <a href="/#teachers" class="navigation-links61-link1">
+                <span>Преподаватели</span>
+            </a>
+            <span class="navigation-links61-text"></span>
+        </nav>
+    </nav>
+    <div data-role="AccordionHeader" class="homepage-accordion-header">
+        <div class="homepage-container02">
+            <svg viewBox="0 0 1024 1024" class="homepage-icon">
+                <path
+                        d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+            </svg>
+        </div>
+    </div>
+    <div data-role="AccordionContent" class="homepage-accordion-content">
+        <div class="homepage-nav1">
+            <nav class="navigation-links61-nav">
+                <a href="about-us.html" class="navigation-links61-navlink">
+                    <span>О нас</span>
+                </a>
+                <a href="course-info.html" class="navigation-links61-navlink1">
+                    <span>Программа курса</span>
+                </a>
+                <a href="#price" class="navigation-links61-link">
+                    <span>Стоимость</span>
+                </a>
+                <a href="#teachers" class="navigation-links61-link1">
+                    <span>Преподаватели</span>
+                </a>
+                <span class="navigation-links61-text"></span>
+            </nav>
+        </div>
+    </div>
+</header>
+

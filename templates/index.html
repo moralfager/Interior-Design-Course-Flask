@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta property="og:title" content="exported project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+  {% if message %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      Swal.fire({
+        title: 'Успешно!',
+        text: 'Вы приобрели курс "Дизайнер интерьера", теперь вы можете зайти на GetCourse через ваш Email и начать зарабатывать',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    });
+  </script>
+  {% endif %}
+    <div>
+      <link href="{{ url_for('static', filename='css/homepage.css') }}" rel="stylesheet" />
+      <div class="homepage-container">
+<!--        <header data-role="Accordion" class="homepage-header">-->
+<!--          <div class="homepage-container01">-->
+<!--            <img-->
+<!--              src="public/playground_assets/%E2%80%94pngtree%E2%80%94red%20wolf%20logo%20for%20game_5518165-200h.png"-->
+<!--              alt="image"-->
+<!--              class="homepage-image"-->
+<!--            />-->
+<!--          </div>-->
+<!--          <div class="homepage-separator"></div>-->
+<!--          <nav class="homepage-nav">-->
+<!--            <nav class="navigation-links61-nav">-->
+<!--              <a href="about-us.html" class="navigation-links61-navlink">-->
+<!--                <span>О нас</span>-->
+<!--              </a>-->
+<!--              <a href="course-info.html" class="navigation-links61-navlink1">-->
+<!--                <span>Программа курса</span>-->
+<!--              </a>-->
+<!--              <a href="#price" class="navigation-links61-link">-->
+<!--                <span>Стоимость</span>-->
+<!--              </a>-->
+<!--              <a href="#teachers" class="navigation-links61-link1">-->
+<!--                <span>Преподаватели</span>-->
+<!--              </a>-->
+<!--              <span class="navigation-links61-text"></span>-->
+<!--            </nav>-->
+<!--          </nav>-->
+<!--          <div data-role="AccordionHeader" class="homepage-accordion-header">-->
+<!--            <div class="homepage-container02">-->
+<!--              <svg viewBox="0 0 1024 1024" class="homepage-icon">-->
+<!--                <path-->
+<!--                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"-->
+<!--                ></path>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div data-role="AccordionContent" class="homepage-accordion-content">-->
+<!--            <div class="homepage-nav1">-->
+<!--              <nav class="navigation-links61-nav">-->
+<!--                <a href="about-us.html" class="navigation-links61-navlink">-->
+<!--                  <span>О нас</span>-->
+<!--                </a>-->
+<!--                <a href="course-info.html" class="navigation-links61-navlink1">-->
+<!--                  <span>Программа курса</span>-->
+<!--                </a>-->
+<!--                <a href="#price" class="navigation-links61-link">-->
+<!--                  <span>Стоимость</span>-->
+<!--                </a>-->
+<!--                <a href="#teachers" class="navigation-links61-link1">-->
+<!--                  <span>Преподаватели</span>-->
+<!--                </a>-->
+<!--                <span class="navigation-links61-text"></span>-->
+<!--              </nav>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </header>-->
+        {% include "header.html" %}
+        <div class="homepage-hero">
+          <div class="homepage-container03">
+            <h1 class="homepage-text">Профессия-Дизайнер интерьера</h1>
+            <span class="homepage-text001">
+              Уникальный курс по дизайну интерьера
+            </span>
+            <span class="homepage-text002">
+              ТЫ ОБРЕТЕШЬ ЗНАНИЯ, УВЕРЕННОСТЬ И НАЧНЕШЬ&nbsp;ЗАРАБАТЫВАТЬ ОТ
+              500.000 ТГ
+            </span>
+            <div class="homepage-btn-group">
+              <a href="#price" class="homepage-link button">
+                <span class="homepage-text003">Начать зарабатывать</span>
+              </a>
+              <a href="#courseinfo" class="homepage-link1 button">
+                <span>
+                  <span>Подробнее</span>
+                  <br />
+                </span>
+              </a>
+            </div>
+          </div>
+          <img
+            alt="image"
+            src="{{ url_for('static', filename='public/playground_assets/herocomp.png') }}"
+            class="homepage-image1"
+          />
+        </div>
+        <div id="courseinfo" class="homepage-features">
+          <h1 class="homepage-text007">
+            <span>Программа курса</span>
+            <br />
+          </h1>
+          <span class="homepage-text010">
+            <span>Мы собрали только лучшую информацию для наших учеников</span>
+            <br />
+          </span>
+          <div class="homepage-container04">
+            <div class="homepage-feature-card">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="homepage-image2"
+              />
+              <h2 class="homepage-text013">10 модулей</h2>
+              <div class="homepage-container05">
+                <span class="homepage-text014">Концепт</span>
+                <span class="homepage-text015">Работа с планировкой</span>
+                <span class="homepage-text016">Подбор материалов</span>
+                <span class="homepage-text017">Рабочее проектирование</span>
+                <span class="homepage-text018">Обучение procreate</span>
+                <span class="homepage-text019">Работа с визуализатором</span>
+                <span class="homepage-text020">Договоры</span>
+                <span class="homepage-text021">Авторский надзор</span>
+                <span class="homepage-text022">Комплектация</span>
+                <span class="homepage-text023">Стратегия заработка</span>
+              </div>
+            </div>
+            <div class="homepage-feature-card1">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="homepage-image3"
+              />
+              <h2 class="homepage-text024">35 авторских лекций</h2>
+              <div class="homepage-container06">
+                <span class="homepage-text025">
+                  <span>Green</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text028">
+                  <span>Yellow</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text031">Orange</span>
+                <span class="homepage-text032">Purple</span>
+                <span class="homepage-text033">Blue</span>
+                <span class="homepage-text034">Silver</span>
+              </div>
+            </div>
+            <div class="homepage-feature-card2">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="homepage-image4"
+              />
+              <h2 class="homepage-text035">45 дней обучения</h2>
+              <div class="homepage-container07">
+                <span class="homepage-text036">Занятия в формате онлайн</span>
+                <span class="homepage-text037">3 месяца доступа</span>
+                <span class="homepage-text038">Практические занятия</span>
+                <span class="homepage-text039">проверка домашних занятий</span>
+              </div>
+            </div>
+          </div>
+          <a href="/info" class="homepage-navlink1 button">
+            <span>
+              <span>Подробнее</span>
+              <br />
+            </span>
+          </a>
+        </div>
+        <div class="homepage-features1">
+          <div class="homepage-separator1"></div>
+        </div>
+        <div class="homepage-features2">
+          <h1 class="homepage-text043">Уроки в формате лекций</h1>
+          <div class="homepage-container08">
+            <div
+              class="feature-card11-feature-card feature-card11-root-class-name"
+            >
+              <h2 class="feature-card11-text"><span>Лекция</span></h2>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="feature-card11-image"
+              />
+            </div>
+            <div
+              class="feature-card11-feature-card feature-card11-root-class-name1"
+            >
+              <h2 class="feature-card11-text"><span>Лекция</span></h2>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="feature-card11-image"
+              />
+            </div>
+            <div
+              class="feature-card11-feature-card feature-card11-root-class-name6"
+            >
+              <h2 class="feature-card11-text"><span>Лекция</span></h2>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="feature-card11-image"
+              />
+            </div>
+            <div
+              class="feature-card11-feature-card feature-card11-root-class-name5"
+            >
+              <h2 class="feature-card11-text"><span>Лекция</span></h2>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&amp;ixlib=rb-1.2.1&amp;w=300"
+                class="feature-card11-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="homepage-pricing">
+          <div id="price" class="homepage-container09">
+            <div class="homepage-container10">
+              <h1 class="homepage-text044">Стоимость курса</h1>
+              <span class="homepage-text045">
+                Новый формат обучения, который подготовит тебя к реальному миру
+                с работодателями. Мы создали топ-4 эффективных связок навыков,
+                за которые работодатели готовы платить. Ты получишь больше
+                практики на реальных проектах и сможешь напрямую задать
+                интересующие тебя вопросы нашим партнерам-работодателям&nbsp;
+              </span>
+            </div>
+            <div class="homepage-container11">
+              <div class="homepage-container12">
+                <span class="homepage-text046">Базовый</span>
+                <span class="homepage-text047">14 900₸</span>
+                <span class="homepage-text048">
+                  ДОСТУП КО ВСЕМ МОДУЛЯМ&nbsp;КУРСА
+                </span>
+                <span class="homepage-text049">
+                  <span>САМОСТОЯТЕЛЬНОЕ ОБУЧЕНИЕ</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text052">
+                  ДОСТУП К ОБУЧАЮЩИМ МАТЕРИАЛАМ 3 МЕСЯЦА ПОСЛЕ ОКОНЧАНИЯ
+                </span>
+                <a href="/buy" class="homepage-navlink2 button">
+                  Купить
+                </a>
+              </div>
+              <div class="homepage-container13">
+                <span class="homepage-text053">Премиум</span>
+                <span class="homepage-text054">24 900₸</span>
+                <span class="homepage-text055">
+                  <span>ДОСТУП КО ВСЕМ МОДУЛЯМ КУРСА</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text058">
+                  <span>ПРОВЕРКА ДОМАШНЕГО ЗАДАНИЯ</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text061">
+                  <span>
+                    <span>ОБРАТНАЯ СВЯЗЬ ОТ ПРЕПОДАВАТЕЛЕЙ</span>
+                    <span></span>
+                  </span>
+                  <span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </span>
+                <span class="homepage-text068">
+                  <span>ЖИВЫЕ ВЕБИНАРЫ</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text071">
+                  <span>ЗАКРЫТЫЙ ЧАТ</span>
+                  <span></span>
+                </span>
+                <span class="homepage-text074">
+                  <span>
+                    ДОСТУП К ОБУЧАЮЩИМ МАТЕРИАЛАМ 3 МЕСЯЦА ПОСЛЕ ОКОНЧАНИЯ
+                  </span>
+                  <span></span>
+                </span>
+                <a href="/buy" class="homepage-navlink3 button">
+                  <span>
+                    <span>Купить</span>
+                    <br />
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="homepage-banner">
+          <h1 class="homepage-text080">Получить первый урок бесплатно</h1>
+          <span class="homepage-text081">
+            <span>Получи первый урок бесплатно</span>
+            <br />
+          </span>
+          <div class="homepage-container14">
+            <input
+              type="text"
+              placeholder="Email here..."
+              id="emailfreelesson"
+              class="homepage-textinput input"
+            />
+            <a
+              href="https://www.google.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="homepage-link2 button"
+            >
+              Subscribe
+            </a>
+          </div>
+        </div>
+        <div id="teachers" class="homepage-container15">
+          <h1 class="homepage-text084">
+            <span>Преподаватели</span>
+            <br />
+          </h1>
+          <span class="homepage-text087">
+            ТЕКСТТЕКСТТЕКСТТЕКСТТЕКСТТЕКСТТЕКСТТЕКСТТЕКСТТЕКСТ
+          </span>
+          <div class="homepage-container16">
+            <div
+              class="testimonial-card11-testimonial-card testimonial-card11-root-class-name2"
+            >
+              <svg viewBox="0 0 1024 1024" class="testimonial-card11-icon">
+                <path
+                  d="M896 384h-256v554h-86v-256h-84v256h-86v-554h-256v-86h768v86zM512 86q34 0 60 25t26 59-26 60-60 26-60-26-26-60 26-59 60-25z"
+                ></path>
+              </svg>
+              <div class="testimonial-card11-testimonial">
+                <span class="testimonial-card11-text">
+                  <span>
+                    Швейцарии (1895 1914), и с 1933 года до конца жизни — в США.
+                    Из Германии с приходом к власти нацистов был вынужден
+                    эмигрировать и после публичного отказа от гражданства
+                    Германии (весной 1933 года) Жил в Германии (18791895,
+                    1914—1933),
+                  </span>
+                </span>
+                <span class="testimonial-card11-text1">
+                  <span>Zhibek Ongarsynova</span>
+                </span>
+                <span class="testimonial-card11-text2">
+                  <span>Interior Designer</span>
+                </span>
+                <img
+                  alt="profile"
+                  src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHdvbWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNjI2NDUxOTgy&amp;ixlib=rb-1.2.1&amp;h=1200"
+                  class="testimonial-card11-image"
+                />
+              </div>
+            </div>
+            <div
+              class="testimonial-card11-testimonial-card testimonial-card11-root-class-name"
+            >
+              <svg viewBox="0 0 1024 1024" class="testimonial-card11-icon">
+                <path
+                  d="M896 384h-256v554h-86v-256h-84v256h-86v-554h-256v-86h768v86zM512 86q34 0 60 25t26 59-26 60-60 26-60-26-26-60 26-59 60-25z"
+                ></path>
+              </svg>
+              <div class="testimonial-card11-testimonial">
+                <span class="testimonial-card11-text">
+                  <span>
+                    Швейцарии (1895 1914), и с 1933 года до конца жизни — в США.
+                    Из Германии с приходом к власти нацистов был вынужден
+                    эмигрировать и после публичного отказа от гражданства
+                    Германии (весной 1933 года) Жил в Германии (18791895,
+                    1914—1933),
+                  </span>
+                </span>
+                <span class="testimonial-card11-text1">
+                  <span>Zhibek Ongarsynova</span>
+                </span>
+                <span class="testimonial-card11-text2">
+                  <span>Interior Designer</span>
+                </span>
+                <img
+                  alt="profile"
+                  src="public/playground_assets/vecteezy_abstract-blur-background-with-pastel-color_7188453-200h.jpg"
+                  class="testimonial-card11-image"
+                />
+              </div>
+            </div>
+            <div
+              class="testimonial-card11-testimonial-card testimonial-card11-root-class-name1"
+            >
+              <svg viewBox="0 0 1024 1024" class="testimonial-card11-icon">
+                <path
+                  d="M896 384h-256v554h-86v-256h-84v256h-86v-554h-256v-86h768v86zM512 86q34 0 60 25t26 59-26 60-60 26-60-26-26-60 26-59 60-25z"
+                ></path>
+              </svg>
+              <div class="testimonial-card11-testimonial">
+                <span class="testimonial-card11-text">
+                  <span>
+                    Швейцарии (1895 1914), и с 1933 года до конца жизни — в США.
+                    Из Германии с приходом к власти нацистов был вынужден
+                    эмигрировать и после публичного отказа от гражданства
+                    Германии (весной 1933 года) Жил в Германии (18791895,
+                    1914—1933),
+                  </span>
+                </span>
+                <span class="testimonial-card11-text1">
+                  <span>Zhibek Ongarsynova</span>
+                </span>
+                <span class="testimonial-card11-text2">
+                  <span>Interior Designer</span>
+                </span>
+                <img
+                  alt="profile"
+                  src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDd8fHdvbWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNjI2NDUxOTgy&amp;ixlib=rb-1.2.1&amp;h=1200"
+                  class="testimonial-card11-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="homepage-stats">
+          <div class="homepage-stat">
+            <h1 class="homepage-text088">
+              <span>50</span>
+              <span>+</span>
+            </h1>
+            <span class="homepage-text091">Учеников</span>
+            <span class="homepage-text092">
+              Наши ученики активно ведут творческую деятельность
+            </span>
+          </div>
+          <div class="homepage-stat1">
+            <h1 class="homepage-text093"><span>369</span></h1>
+            <span class="homepage-text095">
+              <span>Сделано проектов</span>
+              <br />
+            </span>
+            <span class="homepage-text098">
+              За время обучения было сделано проектов
+            </span>
+          </div>
+          <div class="homepage-stat2">
+            <h1 class="homepage-text099">
+              <span>500</span>
+              <span>+</span>
+            </h1>
+            <span class="homepage-text102">Часов обучения</span>
+            <span class="homepage-text103">
+              <span>Обучись профессии за период обучения</span>
+              <br />
+            </span>
+          </div>
+          <div class="homepage-stat3">
+            <h1 class="homepage-text106"><span>24/7</span></h1>
+            <span class="homepage-text108">Поддержка</span>
+            <span class="homepage-text109">
+              <span>Наши преподаватели ответят на ваши вопросы</span>
+              <br />
+            </span>
+          </div>
+        </div>
+        <h1 class="homepage-text112">
+          <span>Работы учеников</span>
+          <br />
+        </h1>
+        <div class="homepage-gallery">
+          <div
+            class="gallery-card11-gallery-card gallery-card11-root-class-name"
+          >
+            <img
+              alt="image"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/32237205-7aef-45b3-ba28-15f259ced39c/5b7e8bdd-dc5d-4bc7-8f43-fcb3538e3128?org_if_sml=130376"
+              class="gallery-card11-image"
+            />
+            <h2 class="gallery-card11-text"><span>Кид Харингтон</span></h2>
+            <span class="gallery-card11-text1">
+              <span>Макет для BI GROUP</span>
+            </span>
+          </div>
+          <div
+            class="gallery-card11-gallery-card gallery-card11-root-class-name1"
+          >
+            <img
+              alt="image"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/32237205-7aef-45b3-ba28-15f259ced39c/5b7e8bdd-dc5d-4bc7-8f43-fcb3538e3128?org_if_sml=130376"
+              class="gallery-card11-image"
+            />
+            <h2 class="gallery-card11-text"><span>Кид Харингтон</span></h2>
+            <span class="gallery-card11-text1">
+              <span>Макет для BI GROUP</span>
+            </span>
+          </div>
+          <div
+            class="gallery-card11-gallery-card gallery-card11-root-class-name2"
+          >
+            <img
+              alt="image"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/32237205-7aef-45b3-ba28-15f259ced39c/5b7e8bdd-dc5d-4bc7-8f43-fcb3538e3128?org_if_sml=130376"
+              class="gallery-card11-image"
+            />
+            <h2 class="gallery-card11-text"><span>Кид Харингтон</span></h2>
+            <span class="gallery-card11-text1">
+              <span>Макет для BI GROUP</span>
+            </span>
+          </div>
+          <div
+            class="gallery-card11-gallery-card gallery-card11-root-class-name3"
+          >
+            <img
+              alt="image"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/32237205-7aef-45b3-ba28-15f259ced39c/5b7e8bdd-dc5d-4bc7-8f43-fcb3538e3128?org_if_sml=130376"
+              class="gallery-card11-image"
+            />
+            <h2 class="gallery-card11-text"><span>Кид Харингтон</span></h2>
+            <span class="gallery-card11-text1">
+              <span>Макет для BI GROUP</span>
+            </span>
+          </div>
+          <div
+            class="gallery-card11-gallery-card gallery-card11-root-class-name4"
+          >
+            <img
+              alt="image"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/32237205-7aef-45b3-ba28-15f259ced39c/5b7e8bdd-dc5d-4bc7-8f43-fcb3538e3128?org_if_sml=130376"
+              class="gallery-card11-image"
+            />
+            <h2 class="gallery-card11-text"><span>Кид Харингтон</span></h2>
+            <span class="gallery-card11-text1">
+              <span>Макет для BI GROUP</span>
+            </span>
+          </div>
+          <div
+            class="gallery-card11-gallery-card gallery-card11-root-class-name5"
+          >
+            <img
+              alt="image"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/32237205-7aef-45b3-ba28-15f259ced39c/5b7e8bdd-dc5d-4bc7-8f43-fcb3538e3128?org_if_sml=130376"
+              class="gallery-card11-image"
+            />
+            <h2 class="gallery-card11-text"><span>Кид Харингтон</span></h2>
+            <span class="gallery-card11-text1">
+              <span>Макет для BI GROUP</span>
+            </span>
+          </div>
+        </div>
+        <div class="homepage-hero1">
+          <h1 class="homepage-text115">Обучайся вместе с нами и будь лучшим</h1>
+          <span class="homepage-text116">Создано при поддержке Жибек</span>
+          <div class="homepage-btn-group1">
+            <a href="/buy" class="homepage-navlink4 button">
+              НАчать зарабатывать
+            </a>
+            <a href="/info" class="homepage-navlink5 button">
+              Подробнее
+            </a>
+          </div>
+        </div>
+        {% include "footer.html" %}
+      </div>
+    </div>
+  </body>
+</html>
