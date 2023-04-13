@@ -9,10 +9,10 @@ from getCourseApi import getCourseAddPerson
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:987123awds@localhost:5432/DesignCourse'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
+# os.environ.get('SQLALCHEMY_DATABASE_URI')
 
 
 class Data(db.Model):
