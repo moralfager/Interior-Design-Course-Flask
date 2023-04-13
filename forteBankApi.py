@@ -1,8 +1,11 @@
 import requests
 import xml.etree.ElementTree as ET
 import os
+import ssl
+
 
 def getPurchaseURL(price, unique_id, name, surname, email, token):
+    ssl._create_default_https_context = ssl._create_unverified_context
     url = 'https://ecomtst.fortebank.com/Exec'
     headers = {'Content-Type': 'application/xml'}
     forte_login = os.environ.get('forte_login')
@@ -32,7 +35,7 @@ def getPurchaseURL(price, unique_id, name, surname, email, token):
     '''
     # Отправляем запрос к API
 
-    response = requests.post(url, headers=headers, auth=auth, data=xml_string)
+    response = requests.post(url, headers=headers, auth=auth, data=xml_string, ssl_version=ssl.PROTOCOL_TLSv1_2)
     responseXML = response.content.decode('utf-8')
     response = ET.fromstring(responseXML)
 
@@ -53,6 +56,7 @@ def getPurchaseURL(price, unique_id, name, surname, email, token):
 
 
 def checkStatusForte(OrderID, SessionID):
+    ssl._create_default_https_context = ssl._create_unverified_context
     url = 'https://ecomtst.fortebank.com/Exec'
     headers = {'Content-Type': 'application/xml'}
     forte_login = os.environ.get('forte_login')
@@ -71,7 +75,7 @@ def checkStatusForte(OrderID, SessionID):
             </Request>
         </TKKPG>
     '''
-    response = requests.post(url, headers=headers, auth=auth, data=checkStatusForteXML)
+    response = requests.post(url, headers=headers, auth=auth, data=checkStatusForteXML, ssl_version=ssl.PROTOCOL_TLSv1_2)
     responseXML = response.content.decode('utf-8')
     response = ET.fromstring(responseXML)
     OrderStatus = response.find('.//OrderStatus').text
