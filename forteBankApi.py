@@ -2,6 +2,7 @@ import requests
 import xml.etree.ElementTree as ET
 import os
 import ssl
+from OpenSSL.SSL import TLSv1_2_METHOD
 
 
 def getPurchaseURL(price, unique_id, name, surname, email, token):
@@ -35,7 +36,7 @@ def getPurchaseURL(price, unique_id, name, surname, email, token):
     '''
     # Отправляем запрос к API
 
-    response = requests.post(url, headers=headers, auth=auth, data=xml_string, ssl_version=ssl.PROTOCOL_TLSv1_2)
+    response = requests.post(url, headers=headers, auth=auth, data=xml_string, verify=False,  adapter=requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=1, ssl_version=TLSv1_2_METHOD))
     responseXML = response.content.decode('utf-8')
     response = ET.fromstring(responseXML)
 
@@ -75,7 +76,7 @@ def checkStatusForte(OrderID, SessionID):
             </Request>
         </TKKPG>
     '''
-    response = requests.post(url, headers=headers, auth=auth, data=checkStatusForteXML, ssl_version=ssl.PROTOCOL_TLSv1_2)
+    response = requests.post(url, headers=headers, auth=auth, data=checkStatusForteXML, verify=False,  adapter=requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=1, ssl_version=TLSv1_2_METHOD))
     responseXML = response.content.decode('utf-8')
     response = ET.fromstring(responseXML)
     OrderStatus = response.find('.//OrderStatus').text
