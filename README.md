@@ -15,9 +15,7 @@ Welcome to my Interior Design Course, which integrates with the ForteBank API an
 - [Configuration](#configuration)
 - [Routes](#routes)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Introduction
 
